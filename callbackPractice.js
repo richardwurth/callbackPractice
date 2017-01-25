@@ -1,16 +1,16 @@
 /* In this repo your job is to write functions to make each function call work properly.
-Below is a sample problem 
+Below is a sample problem
 
   //code here for sayHi
 
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay);
    });
-   
 
-and what you should write is the sayHi function that makes the code above work, 
-    
-    
+
+and what you should write is the sayHi function that makes the code above work,
+
+
    var sayHi = function(str, cb){
     cb(str);
    }
@@ -18,14 +18,17 @@ and what you should write is the sayHi function that makes the code above work,
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay); //should alert ('Hi Katie')'
    });
-    
-    
+
+
 */
 
 
 
   //Code Here for first
-  
+
+function first(str, cb) {
+  cb(names[0]);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -40,9 +43,31 @@ first(names, function(firstName){
 
 
   //Code Here for last
+function last(str, cb) {
+  cb(names.slice(names.length-1));
+}
 
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
+});
+
+
+/* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
+
+
+
+
+
+
+  //Code Here for multiply
+
+function multiply(num1,num2,cb) {
+  cb(num1 * num2);
+}
+
+
+multiply(4, 3, function(answer){
+  console.log('The answer is ' + answer); //should console.log 12
 });
 
 
@@ -55,24 +80,20 @@ last(names, function(lastName){
 
 
 
-
-  //Code Here for multiply
-
-multiply(4, 3, function(answer){
-  console.log('The answer is ' + answer); //should console.log 12
-})
-
-
-
-
-
-/* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
-
-
-
-
   //Code Here for contains
+
+
+function contains(arr, str, cb) {
+  var result = false;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == str) {
+      result = true;
+    }
+  }
+  cb(result);
+}
+
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -146,5 +167,5 @@ var users = [
 ];
 
 getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
