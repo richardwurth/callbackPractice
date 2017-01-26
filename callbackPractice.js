@@ -129,6 +129,8 @@ uniq(names, function(uniqArr){
 
     //Code Here for each
 
+
+
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
@@ -144,6 +146,15 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+
+function getUserById(arr,str,cb) {
+  var result = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === str) {
+      cb(arr[i]);
+    }
+  }
+}
 
 var users = [
   {
